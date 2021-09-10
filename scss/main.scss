@@ -1,0 +1,134 @@
+@import "config";
+@import "temprature";
+@import "weather_item";
+
+@mixin centralized {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin mobile {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #2c3e50, #2980b9);
+  @include centralized();
+  @include mobile() {
+    height: auto;
+  }
+
+  .weather-box {
+    width: 90%;
+    height: 80%;
+    margin: 0 auto;
+    background-color: rgba(232, 242, 238, 255);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    @include centralized();
+    flex-wrap: wrap;
+    @include mobile() {
+      flex-direction: column;
+      height: auto;
+    }
+    &-top {
+      width: 100%;
+      @include centralized();
+      justify-content: flex-end;
+      padding-right: 20px;
+      @include mobile() {
+        justify-content: center;
+        flex-direction: column;
+      }
+      .date-time {
+        margin: 0 auto;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 18px;
+        @include mobile() {
+          font-size: smaller;
+          padding: 5px;
+        }
+      }
+      #city {
+        margin-right: 5px;
+        height: 25px;
+        border: 1px inset #000;
+        @include mobile() {
+          width: 80%;
+        }
+      }
+      .city-list {
+        width: 300px;
+        height: 500px;
+        position: absolute;
+        background-color: rgb(51, 153, 65);
+        top: 105px;
+        overflow-y: scroll;
+        display: none;
+        @include mobile() {
+          width: 60%;
+          top: 60px;
+        }
+        ul li {
+          list-style-type: none;
+          text-align: center;
+          padding: 3px;
+          border-bottom: 1px solid #000;
+        }
+      }
+
+      .btn {
+        width: 70px;
+        height: 25px;
+        border: 0;
+        color: #fff;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: #2980b9;
+        border-radius: 5px;
+        @include mobile() {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+.weather-box-left {
+  width: 30%;
+  height: 90%;
+  border-right: 1px solid #000;
+  @include mobile() {
+    width: 98%;
+    height: 350px;
+    border-right: none;
+  }
+}
+.weather-box-right {
+  width: 65%;
+  height: 95%;
+  @include centralized();
+  flex-wrap: wrap;
+  @include mobile() {
+    width: 98%;
+    height: 600px;
+  }
+
+  &-item {
+    width: 32%;
+    height: 30%;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: $box-item-bgcolor;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    @include mobile() {
+      width: 45%;
+    }
+  }
+}

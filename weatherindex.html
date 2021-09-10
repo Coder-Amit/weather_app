@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="resource/icons/wether-favi.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="weather-box">
+        <div class="weather-box-top">
+          <p class="date-time">Friday 14:00 hrs</p>
+          <input id="city" type="text" placeholder="Search By City" />
+          <button class="btn">Search</button>
+        </div>
+        <section class="weather-box-left temprature">
+          <p class="city-name">Landon,NY</p>
+          <p class="overall-cond">Hot</p>
+          <figure class="temrature-icon">
+            <img class="icon" src="resource/icons/haze.png" alt="" />
+          </figure>
+          <div class="temprature-data">
+            <p><span class="temprature-data-value"></span></p>
+            <p>Feels Like <span class="temprature-data-feel"></span>&#8451;</p>
+          </div>
+        </section>
+        <section class="weather-box-right">
+          <div class="weather-box-right-item weather-item">
+            <div class="weather-item-icon">
+              <img src="resource/icons/humidity-drop.png" alt="humidity icon" />
+            </div>
+            <div class="weather-item-content">
+              <p>Humidity</p>
+              <h3 class="humidity-value">00</h3>
+              <p class="humidity-unit">%</p>
+            </div>
+          </div>
+          <div class="weather-box-right-item weather-item">
+            <div class="weather-item-icon">
+              <img src="resource/icons/wind-speed.png" alt="humidity icon" />
+            </div>
+            <div class="weather-item-content">
+              <p>Wind Speed</p>
+              <h3 class="wind-speed-value">00</h3>
+              <p class="wind-speed-unit">m/s</p>
+            </div>
+          </div>
+          <div class="weather-box-right-item weather-item">
+            <div class="weather-item-icon">
+              <img
+                src="resource/icons/wind-direction.png"
+                alt="humidity icon"
+              />
+            </div>
+            <div class="weather-item-content">
+              <p>Wind Direction</p>
+              <h3 class="wind-direction-value">NE</h3>
+            </div>
+          </div>
+          <div class="weather-box-right-item weather-item">
+            <div class="weather-item-icon">
+              <img src="resource/icons/visibility.png" alt="humidity icon" />
+            </div>
+            <div class="weather-item-content">
+              <p>Visibility</p>
+              <h3 class="visibility-value">00</h3>
+              <p class="visibility-unit">KM</p>
+            </div>
+          </div>
+          <div class="weather-box-right-item weather-item">
+            <div class="weather-item-icon">
+              <img src="resource/icons/sunrise_icon.png" alt="humidity icon" />
+            </div>
+            <div class="weather-item-content">
+              <p>Sunrise</p>
+              <h3 class="sunrise-value">00:00:00</h3>
+            </div>
+          </div>
+          <div class="weather-box-right-item weather-item">
+            <div class="weather-item-icon">
+              <img src="resource/icons/sunset_icon.png" alt="humidity icon" />
+            </div>
+            <div class="weather-item-content">
+              <p>Sunset</p>
+              <h3 class="sunset-value">00:00:00</h3>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

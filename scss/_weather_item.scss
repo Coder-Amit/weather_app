@@ -1,0 +1,38 @@
+$font_size: (
+  "biggest": 32px,
+  "big": 26px,
+  "medium": 18px,
+  "small": 14px,
+);
+@mixin mobile {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+@mixin flexBox {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.weather-item {
+  @include flexBox();
+  &-icon img {
+    width: 128px;
+    @include mobile() {
+      width: 96px;
+    }
+  }
+  &-content {
+    padding: 5px;
+    text-align: end;
+    @include mobile() {
+      width: 95%;
+    }
+  }
+  @include mobile() {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
