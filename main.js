@@ -15,7 +15,7 @@ function error(err) {
 }
 async function getValueByLocation(pos) {
   let cord = pos.coords;
-  let API_ID = "3261ba2449d8e9530eae7d1ce99dda0f";
+  let API_ID = "your_API_ID";
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${cord.latitude}&lon=${cord.longitude}&appid=${API_ID}&units=metric`;
   try {
     const responce = await fetch(url);
@@ -87,7 +87,7 @@ const directionObj = (deg, tm) => {
 
 async function getInput() {
   let cityName = document.querySelector("#city").value;
-  let API_ID = "3261ba2449d8e9530eae7d1ce99dda0f";
+  let API_ID = "your_API_ID";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_ID}&units=metric`;
   try {
     const responce = await fetch(url);
